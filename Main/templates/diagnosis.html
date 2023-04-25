@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="os_neno_wrap">
+  <div class="os_wrap">
+    <div class="os_mid">
+      <span class="os_text"></span>
+    </div>
+
+    <div class="neon">
+      <a href="{% url  'window_diagnosis' %}" id="left_side" class="wow">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        윈도우 수동 진단
+      </a>
+      <a href="{% url  'linux_diagnosis' %}" id="right_side" class="wow">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        리눅스 수동 진단
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

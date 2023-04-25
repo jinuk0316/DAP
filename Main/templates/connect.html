@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block content %}
+
+<div>
+  <div>
+    <form method="POST" action="{% url 'connect_user' %}">
+      {% csrf_token %}
+      <fieldset>
+        <legend>서버 연결 형식</legend>
+        <table class="table">
+          <tr>
+            <td>유저 아이디 :</td>
+            <td><input type="text" name="user_id" id="user_id" placeholder="유저 아이디를 입력하세요" value="{{ user.username }}" /></td>
+          </tr>
+          <tr>
+            <td>루트 아이디 :</td>
+            <td><input type="text" name="root_id" id="root_id" placeholder="아이디를 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>비밀번호 :</td>
+            <td><input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>이메일 :</td>
+            <td><input type="text" name="email" id="email" placeholder="이메일을 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>IP 주소 :</td>
+            <td><input type="text" name="ipaddress" id="ipaddress" placeholder="IP 주소를 입력하세요" /></td>
+          </tr>
+          <tr>
+            <td>번호 :</td>
+            <td>
+              <select name="phone_1">
+                <option value="010">010</option>
+                <option value="02">02</option>
+              </select>
+              -
+              <input type="text" name="phone_2" />
+              -
+              <input type="text" name="phone_3" />
+            </td>
+          </tr>
+          <tr>
+            <td>동의 여부 :</td>
+            <td>가입에 동의 합니다. <input type="checkbox" name="agree" id="agree" /></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td><button type="submit">실행하기</button></td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
